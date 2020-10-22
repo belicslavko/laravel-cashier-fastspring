@@ -45,9 +45,9 @@ class WebhookController extends Controller
         // keep id of successfully managed events
         $successfulEvents = [];
 
-        $hmacSecret = getenv('FASTSPRING_HMAC_SECRET') === false
+        $hmacSecret = $_ENV['FASTSPRING_HMAC_SECRET'] === false
             ? config('services.fastspring.hmac_secret')
-            : getenv('FASTSPRING_HMAC_SECRET');
+            : $_ENV['FASTSPRING_HMAC_SECRET'];
 
         // we try to be sure about
         // message integrity and authentication of message
