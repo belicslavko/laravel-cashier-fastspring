@@ -564,7 +564,7 @@ class SubscriptionTest extends TestCase
         $subscription = $this->createSubscription($user, ['fastspring_id' => 'fastspring_id']);
 
         $response = $subscription->resume();
-        $this->assertInternalType('object', $response);
+        $this->assertIsObject($response);
         $this->assertObjectHasAttribute('subscription', $response->subscriptions[0]);
     }
 

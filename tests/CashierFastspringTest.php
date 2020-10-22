@@ -154,7 +154,7 @@ class CashierFastspringTest extends TestCase
 
         $account = $user->updateAsFastspringCustomer();
 
-        $this->assertInternalType('array', $account);
+        $this->assertIsArray($account);
         $this->assertObjectHasAttribute('account', $account[0]);
     }
 
@@ -185,7 +185,7 @@ class CashierFastspringTest extends TestCase
 
         $account = $user->asFastspringCustomer();
 
-        $this->assertInternalType('array', $account);
+        $this->assertIsArray($account);
         $this->assertObjectHasAttribute('account', $account[0]);
     }
 
@@ -245,7 +245,7 @@ class CashierFastspringTest extends TestCase
         $this->assertTrue($isSubscribed);
         $this->assertTrue($isSubscribedToPlan);
         $this->assertTrue($isSubscribedWithPlanParameter);
-        $this->assertInternalType('object', $subscription);
+        $this->assertIsObject($subscription);
         $this->assertEquals($subscription->plan, 'starter-plan');
         $this->assertEquals($subscriptions->count(), 1);
         $this->assertFalse($onTrial);
