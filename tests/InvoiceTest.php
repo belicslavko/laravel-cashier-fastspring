@@ -13,7 +13,7 @@ class InvoiceTest extends TestCase
     use Database;
     use Model;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         if (file_exists(__DIR__ . '/.env')) {
             $dotenv = \Dotenv\Dotenv::create(__DIR__);
