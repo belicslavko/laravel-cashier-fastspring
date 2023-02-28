@@ -8,6 +8,13 @@ class Base
 {
     use SerializesModels;
 
+    public $id;
+    public $type;
+    public $live;
+    public $processed;
+    public $created;
+    public $data;
+
     /**
      * Create a new event instance.
      *
